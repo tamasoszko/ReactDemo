@@ -1,5 +1,5 @@
 
-export function getButtonStyles(buttonStyle) {
+export function getButtonStyles(theme) {
     let bgColor = "bg-white";
     let hoverColor = "hover:bg-gray-50"
     let activeColor = "active:bg-red-400"
@@ -8,7 +8,7 @@ export function getButtonStyles(buttonStyle) {
     let borderStyle = "border-none";
     let shadow = "shadow";
     
-    switch (buttonStyle) {
+    switch (theme) {
         case "primary":
             bgColor = "bg-gray-700"
             hoverColor = "hover:bg-gray-900"
@@ -28,5 +28,5 @@ export function getButtonStyles(buttonStyle) {
             titleColor = "text-gray-700"
             break;
     }
-    return {bgColor, hoverColor, activeColor, titleColor, borderColor, borderStyle, shadow};
+    return {bgColor, hoverColor: `lg:${hoverColor}`, activeColor, titleColor, borderColor, borderStyle, shadow};
 }

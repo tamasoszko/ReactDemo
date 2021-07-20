@@ -5,7 +5,7 @@ import { getCardStyles } from '../styles/CardStyles';
 export function MessageCard(props) {
     
     const {bgColor, hoverColor, titleColor, messageColor, ringColor, ringBorderColor, borderColor, borderStyle, shadow, iconHexColor} 
-        = getCardStyles(props.cardStyle)
+        = getCardStyles(props.theme)
 
     return (
     <div class={`flex-row p-4 sm:p-8 mx-8 my-4 sm:my-8 max-w-xs sm:max-w-full mx-auto rounded-xl shadow-md flex

@@ -1,5 +1,5 @@
 
-export function getInputStyles(inputStyle) {
+export function getInputStyles(theme) {
     let bgColor = "bg-gray-50";
     let hoverColor = "hover:white"
     let activeColor = "active:white"
@@ -14,7 +14,7 @@ export function getInputStyles(inputStyle) {
     let titleColor = "text-gray-600"
     let subtitleColor = "text-gray-400"
     
-    switch (inputStyle) {
+    switch (theme) {
         case "success":
             bgColor = "bg-green-50"
             textColor = "text-green-600"

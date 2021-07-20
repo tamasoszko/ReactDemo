@@ -1,12 +1,12 @@
 
-export function getTextStyles(textStyle) {
+export function getTextStyles(theme) {
     let textColor = "text-gray-800"
     let fontSize = "text-base"
     let fontStyle = "not-italic"
     let fontWeight = "font-normal" 
     let margins = ""
 
-    switch (textStyle) {
+    switch (theme) {
         case "h1":
             fontSize = "text-3xl"
             fontWeight = "font-bold"

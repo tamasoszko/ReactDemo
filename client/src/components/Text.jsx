@@ -1,10 +1,10 @@
-import '../styles/styles.css';
-import { getTextStyles} from '../styles/TextStyles'
+import 'styles/styles.css';
+import { getTextStyles} from 'styles/TextStyles'
 
 export function Text(props) {
     
     const {styleTextColor, fontSize, fontStyle, fontWeight, margins}
-        = getTextStyles(props.textStyle)
+        = getTextStyles(props.theme)
 
     let textColor = styleTextColor
     if (props.textColor) {

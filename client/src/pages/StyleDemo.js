@@ -1,11 +1,11 @@
-import { MessageCard } from '../components/MessageCard';
-import { Button } from '../components/Button';
-import { BadgeButton } from '../components/BadgeButton';
-import { Text } from '../components/Text';
-import { Input } from '../components/Input';
-import { linkStyles} from '../styles/LinkStyles'
-import { imageStyles} from '../styles/ImageStyles'
-import { sampleText } from '../assets/Samples'
+import { MessageCard } from 'components/MessageCard';
+import { Button } from 'components/Button';
+import { BadgeButton } from 'components/BadgeButton';
+import { Text } from 'components/Text';
+import { Input } from 'components/Input';
+import { linkStyles} from 'styles/LinkStyles'
+import { imageStyles} from 'styles/ImageStyles'
+import { sampleText } from 'assets/Samples'
 
 export function StyleDemo() {
     const cardContent = {
@@ -18,40 +18,40 @@ export function StyleDemo() {
     return (
         <div className="App" class={`m-4 sm:m-16`}>
       
-        <MessageCard {...cardContent} cardStyle="darkgray"/>
-        <MessageCard {...cardContent} cardStyle="yellow"/>
-        <MessageCard {...cardContent} cardStyle="default"/>         
-        <MessageCard {...cardContent} cardStyle="white"/>    
+        <MessageCard {...cardContent} theme="darkgray"/>
+        <MessageCard {...cardContent} theme="yellow"/>
+        <MessageCard {...cardContent} theme="default"/>         
+        <MessageCard {...cardContent} theme="white"/>    
         
         <p class='my-4 sm:my-8'>
   
-          <Text title={`Heading 1 text`} textStyle='h1' />
-          <Text title={`Heading 2 text`} textStyle='h2' />
-          <Text title={`Title text: ${sampleText.short}`} textStyle='title' />
-          <Text title={`Subtitle text: ${sampleText.long}`} textStyle='subtitle' />
-          <Text title={`Normal text: ${sampleText.long}`} textStyle='default' />
+          <Text title={`Heading 1 text`} theme='h1' />
+          <Text title={`Heading 2 text`} theme='h2' />
+          <Text title={`Title text: ${sampleText.short}`} theme='title' />
+          <Text title={`Subtitle text: ${sampleText.long}`} theme='subtitle' />
+          <Text title={`Normal text: ${sampleText.long}`} theme='default' />
   
         </p>
   
         <p>
           <div class='flex flex-row flex-wrap items-top'>
-            <Input inputStyle='default' title="Input label" subtitle='Input label subtitle text' value='Default input' placeholder='Default placeholder' /> 
-            <Input inputStyle='success' title='Enter something' subtitle='Well done.' placeholder='Success placeholder' /> 
-            <Input inputStyle='fail' title='Enter something else' subtitle='Failures reason text goes here' value='Failed input' placeholder='Failed placeholder' /> 
+            <Input theme='default' title="Input label" subtitle='Input label subtitle text' value='Default input' placeholder='Default placeholder' /> 
+            <Input theme='success' title='Enter something' subtitle='Well done.' placeholder='Success placeholder' /> 
+            <Input theme='fail' title='Enter something else' subtitle='Failures reason text goes here' value='Failed input' placeholder='Failed placeholder' /> 
           </div>
         </p>
   
         <div class='flex flex-row flex-wrap items-top'>
-          <Button buttonStyle='primary' title='Primary Button' /> 
-          <Button buttonStyle='secondary' title='Secondary Button'/> 
-          <Button buttonStyle='default' title='Default Button'/>
+          <Button theme='primary' title='Primary Button' /> 
+          <Button theme='secondary' title='Secondary Button'/> 
+          <Button theme='default' title='Default Button'/>
         </div>
   
         <div class='flex flex-row items-top'>
-          <BadgeButton buttonStyle='blue' title='Bagde+' /> 
-          <BadgeButton buttonStyle='yellow' title='100+'/> 
-          <BadgeButton buttonStyle='red' title='Red'/>
-          <BadgeButton buttonStyle='gray' title='Gray'/>
+          <BadgeButton theme='blue' title='Bagde+' /> 
+          <BadgeButton theme='yellow' title='100+'/> 
+          <BadgeButton theme='red' title='Red'/>
+          <BadgeButton theme='gray' title='Gray'/>
         </div>
   
         <p class='my-4 sm:my-8'>
@@ -61,11 +61,13 @@ export function StyleDemo() {
           {sampleText.medium} <a class={linkStyles.subtitleBold} href='https://apps.no'> with some bold subtitle link </a> {sampleText.medium}
         </p>      
   
-        <img class={imageStyles.default} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-1.jpg`} />
-        <img class={imageStyles.default} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-2.jpg`} />
-        <img class={imageStyles.default} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-3.jpg`} />
-        <img alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-4.jpg`} />
-  
+        <div class='flex flex-row flex-wrap place-content-center gap-8'>
+          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-1.jpg`} />
+          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-2.jpg`} />
+          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-3.jpg`} />
+          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-4.jpg`} />
+        </div>
+
       </div>
     );
 } 

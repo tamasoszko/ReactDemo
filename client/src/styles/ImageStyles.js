@@ -1,11 +1,12 @@
 
-    function getImageStyles(style) {
-        let margins = "my-4"
+    function getImageStyles(theme) {
+        let margins = "m-0"
         let paddings = ""
         let width = ""
         let border = ''
+        let shadow = 'filter drop-shadow-lg'
 
-        switch (style) {
+        switch (theme) {
         case "small":
             paddings = ""
             width = "w-24"
@@ -21,7 +22,7 @@
         default:
             break;
     }
-    return [margins, paddings, width, border].join(' ')
+    return [margins, paddings, width, border, shadow].join(' ')
 }
 
 export const imageStyles = {

@@ -1,5 +1,5 @@
 
-export function getCardStyles(cardStyle) {
+export function getCardStyles(theme) {
     let bgColor = "bg-gray-100";
     let hoverColor = "hover:bg-gray-200"
     let titleColor = "text-gray-900";
@@ -11,7 +11,7 @@ export function getCardStyles(cardStyle) {
     let shadow = "shadow";
     let iconHexColor = "#111827"
     
-    switch (cardStyle) {
+    switch (theme) {
         case "darkgray":
             bgColor = "bg-gray-700"
             hoverColor = "hover:bg-gray-700"

@@ -1,5 +1,5 @@
 
-export function getBadgeButtonStyles(buttonStyle) {
+export function getBadgeButtonStyles(theme) {
     let bgColor = "bg-yellow-600";
     let hoverColor = "hover:text-yellow-100 hover:bg-yellow-700"
     let activeColor = "active:bg-yellow-800"
@@ -8,7 +8,7 @@ export function getBadgeButtonStyles(buttonStyle) {
     let borderStyle = "border-none";
     let shadow = "shadow";
     
-    switch (buttonStyle) {
+    switch (theme) {
         case "blue":
             bgColor = "bg-gray-700"
             hoverColor = "hover:bg-gray-900"

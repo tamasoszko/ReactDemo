@@ -1,12 +1,12 @@
 
-export function getLinkStyles(textStyle) {
+export function getLinkStyles(theme) {
     let textColor = "text-yellow-700"
     let fontSize = "text-base"
     let fontStyle = "not-italic"
     let fontWeight = "font-normal" 
     let margins = ""
 
-    switch (textStyle) {
+    switch (theme) {
         case "subtitle":
             fontSize = "text-sm"
             fontStyle = "italic"
