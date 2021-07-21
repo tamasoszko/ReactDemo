@@ -27,7 +27,7 @@ export function getTextStyles(theme) {
             fontSize = "text-sm"
             fontStyle = "italic"
             fontWeight = "font-light"
-            margins = "my-2"
+            margins = "my-1"
             break;
         default:
             break;

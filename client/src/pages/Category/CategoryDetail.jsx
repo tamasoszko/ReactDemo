@@ -12,6 +12,7 @@ import { fetchProducts } from 'services/ProductsApi';
 import { useState, useEffect } from 'react';
 import { Loading } from 'components/Loading';
 import { Error } from 'components/Error';
+import { BadgeButton } from 'components/BadgeButton';
 
 export function CategoryDetail(props) {
     const [state, setState] = useState({
@@ -59,9 +60,21 @@ function getContent(props, state) {
         <div>
             {state.category && 
                 <div>
-                    <Text theme='h1' title={`${state.category.title}`} />
-                    <Text theme='title' title={`${state.category.totalQty} items, ${state.category.numberOfProducts} products`} />
-                    <Text theme='title' title={`Prices from ${state.category.currency} ${state.category.minPrice}`} />
+                    <Text theme='h1' title={`${state.category.title}`} />                    
+                    <div class='flex flex-row gap-2 items-center'>
+                        <Text theme='title' title={`Prices from`} />
+                        <BadgeButton theme='yellow' size='xlarge' title={`${state.category.currency} ${state.category.minPrice}`} />
+                    </div>
+                    <div class='flex flex-row gap-4 items-center'>
+                        <div class='flex flex-row gap-2 items-center'>
+                            <BadgeButton theme='gray' size='large' title={`${state.category.totalQty}`} />
+                            <Text theme='title' title='items' />
+                        </div>
+                        <div class='flex flex-row gap-1 items-center'>
+                            <BadgeButton theme='gray' size='large' title={`${state.category.numberOfProducts}`} />
+                            <Text theme='title' title='products' />
+                        </div>
+                    </div>
                     <Text theme='' title={`${state.category.description}`}/>
                 </div>
             }

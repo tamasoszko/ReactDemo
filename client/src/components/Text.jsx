@@ -6,10 +6,8 @@ export function Text(props) {
     const {styleTextColor, fontSize, fontStyle, fontWeight, margins}
         = getTextStyles(props.theme)
 
-    let textColor = styleTextColor
-    if (props.textColor) {
-      textColor = props.textColor
-    }
+    const textColor = props.textColor ? props.textColor : styleTextColor
+
     return (
       <div class={`${textColor} ${fontSize} ${fontStyle} ${fontWeight} ${margins} ${props.textColor}`}> {props.title} </div>
     );

@@ -4,8 +4,8 @@ import { BadgeButton } from 'components/BadgeButton';
 import { Text } from 'components/Text';
 import { Input } from 'components/Input';
 import { linkStyles} from 'styles/LinkStyles'
-import { imageStyles} from 'styles/ImageStyles'
 import { sampleText } from 'assets/Samples'
+import { Image, localPath } from 'components/Image';
 
 export function StyleDemo() {
     const cardContent = {
@@ -34,6 +34,7 @@ export function StyleDemo() {
         </p>
   
         <p>
+          <Text title='Inputs' theme='title' />
           <div class='flex flex-row flex-wrap items-top'>
             <Input theme='default' title="Input label" subtitle='Input label subtitle text' value='Default input' placeholder='Default placeholder' /> 
             <Input theme='success' title='Enter something' subtitle='Well done.' placeholder='Success placeholder' /> 
@@ -41,19 +42,23 @@ export function StyleDemo() {
           </div>
         </p>
   
+        <Text title='Buttons' theme='title' />
         <div class='flex flex-row flex-wrap items-top'>
           <Button theme='primary' title='Primary Button' /> 
           <Button theme='secondary' title='Secondary Button'/> 
           <Button theme='default' title='Default Button'/>
         </div>
   
-        <div class='flex flex-row items-top'>
-          <BadgeButton theme='blue' title='Bagde+' /> 
-          <BadgeButton theme='yellow' title='100+'/> 
-          <BadgeButton theme='red' title='Red'/>
-          <BadgeButton theme='gray' title='Gray'/>
+        <Text title='Badges' theme='title' />
+        <div class='flex flex-row items-center flex-wrap'>
+          <BadgeButton theme='blue' title='42' /> 
+          <BadgeButton theme='red' title='Failed'/>
+          <BadgeButton theme='green' title='Ok'/> 
+          <BadgeButton theme='yellow' size='large' title='Large'/>
+          <BadgeButton theme='gray' size='xlarge' title='Extra large'/>
         </div>
   
+        <Text title='Links' theme='title' />
         <p class='my-4 sm:my-8'>
           {sampleText.medium} <a class={linkStyles.default} href='https://apps.no'> with some link </a> {sampleText.medium}
           {sampleText.medium} <a class={linkStyles.bold} href='https://apps.no'> with some bold link </a> {sampleText.medium}
@@ -61,11 +66,20 @@ export function StyleDemo() {
           {sampleText.medium} <a class={linkStyles.subtitleBold} href='https://apps.no'> with some bold subtitle link </a> {sampleText.medium}
         </p>      
   
-        <div class='flex flex-row flex-wrap place-content-center gap-8'>
-          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-1.jpg`} />
-          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-2.jpg`} />
-          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-3.jpg`} />
-          <img class={`${imageStyles.default} w-64`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/image-4.jpg`} />
+        <Text title='Images' theme='title' />
+        <div class='flex flex-col flex-wrap place-content-center gap-4'>
+
+          <Image src={localPath('a-image-1.jpg')} frameColor='gray-50' a-width='w-80' a-height='h-80' subtitle='Broken auto x auto'/>
+          <Image src={localPath('a-mage-1.jpgs')} frameColor='gray-50' width='w-96' height='h-96' subtitle='Broken 96 x 96'/>
+      
+          <Image src={localPath('image-1.jpg')} frameColor='gray-50' a-width='w-80' a-height='h-80' subtitle='Image auto x auto'/>
+          <Image src={localPath('image-1.jpg')} frameColor='gray-50' width='w-96' a-height='h-96' subtitle='Image 96 x auto'/>
+          <Image src={localPath('image-1.jpg')} frameColor='gray-50' a-width='w-96' height='h-96' subtitle='Image auto x 96'/>
+          <div class='flex flew-row flex-wrap'>
+            <Image src={localPath('image-1.jpg')} scaling='object-cover' width='w-80' a-height='h-96' subtitle='Scaling - cover'/>
+            <Image src={localPath('image-1.jpg')} scaling='object-none' width='w-80' a-height='h-96' subtitle='Scaling - none'/>
+          </div>
+
         </div>
 
       </div>

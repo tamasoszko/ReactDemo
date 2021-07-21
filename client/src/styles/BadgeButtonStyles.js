@@ -22,10 +22,16 @@ export function getBadgeButtonStyles(theme) {
             titleColor = "text-gray-700"
             break;
         case "red":
-            bgColor = "bg-red-700"
-            hoverColor = "hover:bg-red-800 hover:text-red-100"
-            activeColor = "active:bg-red-600"
-            titleColor = "text-red-50"
+            bgColor = "bg-red-600"
+            hoverColor = "hover:bg-red-700 hover:text-red-100"
+            activeColor = "active:bg-red-700"
+            titleColor = "text-red-100"
+            break;
+        case "green":
+            bgColor = "bg-green-600"
+            hoverColor = "hover:bg-green-700 hover:text-green-100"
+            activeColor = "active:bg-green-700"
+            titleColor = "text-green-100"
             break;
     }
     return {bgColor, hoverColor, activeColor, titleColor, borderColor, borderStyle, shadow};

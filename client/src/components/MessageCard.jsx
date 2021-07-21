@@ -1,6 +1,6 @@
-import '../styles/styles.css';
-import { ReactComponent as Placeholder } from '../assets/account.svg';
-import { getCardStyles } from '../styles/CardStyles';
+import 'styles/styles.css';
+import { ReactComponent as Placeholder } from 'assets/account.svg';
+import { getCardStyles } from 'styles/CardStyles';
 
 export function MessageCard(props) {
     

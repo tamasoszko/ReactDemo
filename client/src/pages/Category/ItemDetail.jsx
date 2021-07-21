@@ -1,11 +1,11 @@
 import { Text } from 'components/Text'
 import { Button } from 'components/Button';
-import { imageStyles } from 'styles/ImageStyles'
 import { BadgeButton } from 'components/BadgeButton';
 import { useState, useEffect } from 'react';
 import { fetchProduct } from 'services/ProductsApi';
 import { Loading } from 'components/Loading';
 import { Error } from 'components/Error';
+import { Image, localPath } from 'components/Image';
 
 export function ItemDetail(props) {
 
@@ -51,15 +51,8 @@ function getContent(props, item) {
                 <Text theme='title' title={`${item.currency} ${item.price}`} />
             </div>
             <Text theme='subtitle' title={`${item.name}`} />
-            <div class='flex flex-row gap-8 flex-wrap items-center'>
-                <div class='relative'>
-                    <div class='w-48 h-48 bg-gray-100'>
-                        <img class={`${imageStyles.default} w-48`} alt='Sorry :(' src={`${process.env.PUBLIC_URL}/images/${props.match.params.category}-1.jpg`} />
-                    </div>
-                    <div class="absolute -top-4 -right-4">
-                        <BadgeButton theme='yellow' title={`${item.qty}`} />
-                    </div>
-                </div>
+            <div class='flex flex-col gap-8 flex-wrap items-center'>
+                <Image width='w-4/5 sm:w-3/4' height='h-4/5 sm:h-3/4' badgeTitle={`${item.qty}`} src={localPath(`${props.match.params.category}-1.jpg`)}/>
                 <Button theme='primary' title='Buy now' />
             </div>
             <Text theme='subtitle' title={`Item id: ${item.id}`} />

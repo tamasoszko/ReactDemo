@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Link,
   } from "react-router-dom";
-import { linkStyles } from '../styles/LinkStyles'
+import { linkStyles } from 'styles/LinkStyles'
 
 function SubMenu(props) {
   return (

@@ -1,5 +1,5 @@
-import '../styles/styles.css';
-import { getInputStyles} from '../styles/InputStyles'
+import 'styles/styles.css';
+import { getInputStyles} from 'styles/InputStyles'
 import { Text } from './Text';
 
 export function Input(props) {
@@ -15,7 +15,7 @@ export function Input(props) {
         py-2 sm:py-4 px-4 sm:px-8 m-2 rounded-lg 
         ${bgColor} ${hoverColor} ${activeColor} ${textColor} ${borderColor} ${borderWidth} ${focusRingColor} ${focusTitleColor} ${shadow} ${placeholderOpacity} ${placeholderColor}
         focus:outline-none focus:ring-2 focus:border-transparent`} />
-        <div class={`mx-2 -mt-4`}>
+        <div class={`mx-2 -mt-2`}>
             <Text title={props.subtitle} theme='subtitle' textColor={subtitleColor}/>
         </div>
     </div>
