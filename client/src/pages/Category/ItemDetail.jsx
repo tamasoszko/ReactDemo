@@ -50,12 +50,10 @@ function getContent(props, item) {
                 <Text theme='h1' title={`${item.name}`} />
                 <Text theme='title' title={`${item.currency} ${item.price}`} />
             </div>
-            <Text theme='subtitle' title={`${item.name}`} />
-            <div class='flex flex-col gap-8 flex-wrap items-center'>
-                <Image width='w-4/5 sm:w-3/4' height='h-4/5 sm:h-3/4' badgeTitle={`${item.qty}`} src={localPath(`${props.match.params.category}-1.jpg`)}/>
+            <div class='flex flex-col gap-4 flex-wrap items-start pb-8'>
+                <Image width='w-64 sm:w-96' height='h-64 sm:h-96' badgeTitle={`${item.qty}`} src={localPath(`${props.match.params.category}-1.jpg`)} subtitle={`Item id: ${item.id}`}/>
                 <Button theme='primary' title='Buy now' />
             </div>
-            <Text theme='subtitle' title={`Item id: ${item.id}`} />
             <div class=''>
                 <Text theme='normal' title={`${item.description}`} />
             </div>

@@ -67,17 +67,17 @@ export function StyleDemo() {
         </p>      
   
         <Text title='Images' theme='title' />
-        <div class='flex flex-col flex-wrap place-content-center gap-4'>
+        <div class='flex flex-col flex-wrap place-content-center gap-4 mx-4'>
 
-          <Image src={localPath('a-image-1.jpg')} frameColor='gray-50' a-width='w-80' a-height='h-80' subtitle='Broken auto x auto'/>
-          <Image src={localPath('a-mage-1.jpgs')} frameColor='gray-50' width='w-96' height='h-96' subtitle='Broken 96 x 96'/>
+          <Image src={localPath('a-image-1.jpg')} frameColor='gray-50' a-width='w-80' a-height='h-80' subtitle='Broken auto X auto'/>
+          <Image src={localPath('a-mage-1.jpgs')} frameColor='gray-50' width='w-64 sm:w-96' height='h-64 sm:w-96' subtitle='Broken fix X fix'/>
       
-          <Image src={localPath('image-1.jpg')} frameColor='gray-50' a-width='w-80' a-height='h-80' subtitle='Image auto x auto'/>
-          <Image src={localPath('image-1.jpg')} frameColor='gray-50' width='w-96' a-height='h-96' subtitle='Image 96 x auto'/>
-          <Image src={localPath('image-1.jpg')} frameColor='gray-50' a-width='w-96' height='h-96' subtitle='Image auto x 96'/>
-          <div class='flex flew-row flex-wrap'>
-            <Image src={localPath('image-1.jpg')} scaling='object-cover' width='w-80' a-height='h-96' subtitle='Scaling - cover'/>
-            <Image src={localPath('image-1.jpg')} scaling='object-none' width='w-80' a-height='h-96' subtitle='Scaling - none'/>
+          <Image src={localPath('image-1.jpg')} frameColor='gray-50' a-width='w-80' a-height='h-80' subtitle='Image auto X auto'/>
+          <Image src={localPath('image-1.jpg')} frameColor='gray-50' width='w-64 sm:w-96' a-height='h-96' subtitle='Image fix X auto'/>
+          <Image src={localPath('image-1.jpg')} frameColor='gray-50' a-width='w-96' height='h-64 sm:h-96' subtitle='Image auto X fix'/>
+          <div class='flex flew-row flex-wrap justify-center'>
+            <Image src={localPath('image-1.jpg')} scaling='object-cover' a-width='w-56 sm:w-80' height='h-72 sm:h-96' subtitle='Scaling - cover'/>
+            <Image src={localPath('image-1.jpg')} scaling='object-none' a-width='w-56 sm:w-80' height='h-72 sm:h-96' subtitle='Scaling - none'/>
           </div>
 
         </div>
