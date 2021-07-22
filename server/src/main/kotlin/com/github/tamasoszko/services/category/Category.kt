@@ -1,4 +1,4 @@
-package com.github.tamasoszko.category
+package com.github.tamasoszko.services.category
 
 import io.micronaut.core.annotation.Introspected
 

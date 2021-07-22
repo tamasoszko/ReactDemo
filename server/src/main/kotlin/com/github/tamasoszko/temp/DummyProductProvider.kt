@@ -1,9 +1,8 @@
-package com.github.tamasoszko.dummy
+package com.github.tamasoszko.temp
 
 import com.github.tamasoszko.dataprovider.ProductProvider
-import com.github.tamasoszko.products.Product
+import com.github.tamasoszko.services.products.Product
 import org.apache.commons.lang3.RandomStringUtils
-import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.random.Random
 

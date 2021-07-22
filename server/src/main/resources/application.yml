@@ -4,3 +4,31 @@ micronaut:
   server:
     cors:
       enabled: true
+---
+micronaut:
+  security:
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:BbLffiYSlIr2rXUYd+3KmFT1O5eYmSWzq0T6Jlog42Q}"'
+app:
+  dummy-users:
+  - id: '1'
+    username: 'admin1@test'
+    password: "${TEST_USER_PASSWD}"
+    roles:
+      - 'ROLE_ADMIN'
+      - 'ROLE_USER'
+  - id: '2'
+    username: 'user1@test'
+    password: "${TEST_USER_PASSWD}"
+    roles:
+      - 'ROLE_USER'
+  - id: '3'
+    username: 'user2@test'
+    password: "${TEST_USER_PASSWD}"
+    roles:
+      - 'ROLE_USER'

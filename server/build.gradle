@@ -22,6 +22,10 @@ micronaut {
     }
 }
 
+kapt {
+    useBuildCache = false
+}
+
 dependencies {
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-runtime")
@@ -32,6 +36,9 @@ dependencies {
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-management")
     implementation("org.apache.commons:commons-lang3:3.12.0")
+
+    kapt("io.micronaut.security:micronaut-security-annotations")
+    implementation("io.micronaut.security:micronaut-security-jwt")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 

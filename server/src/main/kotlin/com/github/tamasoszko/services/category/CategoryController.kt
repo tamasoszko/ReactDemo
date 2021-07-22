@@ -1,11 +1,14 @@
-package com.github.tamasoszko.category
+package com.github.tamasoszko.services.category
 
 import com.github.tamasoszko.dataprovider.CategoryProvider
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
+import io.micronaut.security.annotation.Secured
+import io.micronaut.security.rules.SecurityRule
 import javax.inject.Inject
 
 
+@Secured(SecurityRule.IS_ANONYMOUS)
 @Controller("/categories/")
 class CategoryController @Inject constructor(private val categoryProvider: CategoryProvider) {
 

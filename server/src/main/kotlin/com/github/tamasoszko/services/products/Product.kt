@@ -1,7 +1,6 @@
-package com.github.tamasoszko.products
+package com.github.tamasoszko.services.products
 
 import io.micronaut.core.annotation.Introspected
-import java.util.*
 
 @Introspected
 data class Product(

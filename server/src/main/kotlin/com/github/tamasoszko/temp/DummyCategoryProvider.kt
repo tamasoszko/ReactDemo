@@ -1,12 +1,12 @@
-package com.github.tamasoszko.dummy
+package com.github.tamasoszko.temp
 
-import com.github.tamasoszko.category.Category
+import com.github.tamasoszko.services.category.Category
 import com.github.tamasoszko.dataprovider.CategoryProvider
 import com.github.tamasoszko.dataprovider.ProductProvider
-import com.github.tamasoszko.products.Product
-import com.github.tamasoszko.products.maxPrice
-import com.github.tamasoszko.products.minPrice
-import com.github.tamasoszko.products.totalQty
+import com.github.tamasoszko.services.products.Product
+import com.github.tamasoszko.services.products.maxPrice
+import com.github.tamasoszko.services.products.minPrice
+import com.github.tamasoszko.services.products.totalQty
 import javax.inject.Inject
 import javax.inject.Singleton
 

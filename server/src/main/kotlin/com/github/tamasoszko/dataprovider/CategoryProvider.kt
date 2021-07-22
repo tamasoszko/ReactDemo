@@ -1,6 +1,6 @@
 package com.github.tamasoszko.dataprovider
 
-import com.github.tamasoszko.category.Category
+import com.github.tamasoszko.services.category.Category
 
 interface CategoryProvider {
     fun getCategories(): List<Category>

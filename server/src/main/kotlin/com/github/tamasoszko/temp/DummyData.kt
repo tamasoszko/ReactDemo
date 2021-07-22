@@ -1,4 +1,4 @@
-package com.github.tamasoszko.dummy
+package com.github.tamasoszko.temp
 
 object DummyData {
     object Text {
@@ -17,7 +17,7 @@ object DummyData {
             get() = full.substring(0, 55)
 
         val medium: String
-            get() = full.substring(0, 1013)
+            get() = full.substring(0, 212)
     }
-
 }
+
