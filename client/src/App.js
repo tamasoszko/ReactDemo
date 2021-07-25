@@ -4,37 +4,43 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useHistory,
+  Redirect
 } from "react-router-dom";
 import { StyleDemo } from 'pages/StyleDemo';
 import { Text } from 'components/Text';
 import { Home } from 'pages/Home'
 import { About } from 'pages/About'
+import { Login } from 'pages/Login';
+import { useState, useEffect } from 'react';
+import  auth from 'auth/Authentication';
+
 
 function App() {
 
-  const menuItems = [
+    const menuItems = [
     <MenutItem title='Home' path='/' />,
     <MenutItem title='Styles' path='/styles' />,
     <MenutItem title='About' path='/about' />,
   ]
 
+  console.log(`isAuthenticated()=${auth.isAuthenticated()}`)
+
   return (
     <Router>
-      <div flex flex-row>
-        <Menu items={menuItems}/>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/styles">
-            <StyleDemo />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/login" render={props => ( 
+            <Login {...props} />  
+        )}/>
+        <Route path="/" render={props => (
+          auth.isAuthenticated() ?
+            <MainContent tabs={menuItems} {...props} />
+          :
+            <Login {...props} />
+        )}>
+        </Route>
+      </Switch>
     </Router>
   );
 }
@@ -59,8 +65,28 @@ function MenutItem(props) {
   );
 }
 
-function Users() {
-  return <h2>Users</h2>;
+function MainContent(props) {
+
+  useEffect(() => {
+    auth.setHistory(props.history)
+  }, [])
+
+  return (
+    <div flex flex-row>
+        <Menu items={props.tabs}/>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/styles">
+            <StyleDemo />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+  )
 }
 
 export default App;

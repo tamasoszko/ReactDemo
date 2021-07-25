@@ -1,6 +1,6 @@
 
-const backendUrl = 'https://reactdemo.appslab.services'
-// const backendUrl = 'http://localhost:5000'
+// const backendUrl = 'https://reactdemo.appslab.services'
+const backendUrl = 'http://localhost:5000'
 
 
 export const productListUrl = (category) => {
@@ -17,4 +17,8 @@ export const categoryListUrl = () => {
 
 export const categoryUrl = (category) => {
     return `${backendUrl}/categories/${category}`
+}
+
+export const loginUrl = () => {
+    return `${backendUrl}/login`
 }

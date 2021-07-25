@@ -43,7 +43,7 @@ export function StyleDemo() {
         </p>
   
         <Text title='Buttons' theme='title' />
-        <div class='flex flex-row flex-wrap items-top'>
+        <div class='flex flex-row flex-wrap items-top gap-4'>
           <Button theme='primary' title='Primary Button' /> 
           <Button theme='secondary' title='Secondary Button'/> 
           <Button theme='default' title='Default Button'/>

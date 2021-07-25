@@ -9,6 +9,7 @@ import {
 import { Categories } from './Category/Categories';
 import { Button } from 'components/Button';
 import { linkStyles } from 'styles/LinkStyles';
+import { Login } from './Login';
 
 export function Home() {
 
@@ -21,6 +22,7 @@ export function Home() {
                     <Text theme='title' title='This is the home screen'/>                
                     <Text theme='subtitle' title={sampleText.short} />
                     <Text theme='' title={sampleText.long} />
+                    <Link to='/login' class={linkStyles.default}> Login test </Link>
                 </Route>
                 <Route path="/categories">
                     <Categories />
