@@ -8,7 +8,8 @@ import io.micronaut.security.rules.SecurityRule
 import javax.inject.Inject
 
 
-@Secured(SecurityRule.IS_ANONYMOUS)
+//@Secured(SecurityRule.IS_ANONYMOUS)
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/products/")
 class ProductController @Inject constructor(private val productProvider: ProductProvider) {
 
@@ -19,14 +20,5 @@ class ProductController @Inject constructor(private val productProvider: Product
     @Get("/{category}")
     fun productList(category: String): List<Product> =
         productProvider.getProducts(category)
-
-//            @Get("/search?term={searchTerm}")
-//            fun searchDadJokes(@QueryValue searchTerm: String): Single<DadJokePagedResults>
-
-//            @Get(value = "/bob/{name}/params")
-//            String getMyParam(String name, @QueryValue String surname) {
-//        return name + surname;
-//    }
-
 }
 

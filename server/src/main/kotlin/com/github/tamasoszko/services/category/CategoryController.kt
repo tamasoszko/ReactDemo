@@ -8,7 +8,8 @@ import io.micronaut.security.rules.SecurityRule
 import javax.inject.Inject
 
 
-@Secured(SecurityRule.IS_ANONYMOUS)
+//@Secured(SecurityRule.IS_ANONYMOUS)
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/categories/")
 class CategoryController @Inject constructor(private val categoryProvider: CategoryProvider) {
 
